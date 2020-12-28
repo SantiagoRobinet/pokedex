@@ -1,13 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const { urlencoded, json } = require('body-parser');
 const debug = require('debug')('app');
 const { connect } = require('mongoose');
 const cors = require('cors');
 
-const pokemonRouter = require('./src/routes/pokemonRouter');
+const pokemonModel = require('./src/models/pokemonModel');
+const pokemonRouter = require('./src/routes/pokemonRouter')(pokemonModel);
 
 const app = express();
 const port = process.env.PORT || 2804;
+const bodyConfig = { limit: '10mb', extended: true };
 
 connect('mongodb+srv://admin:admin@admira-pokecluster.yxysw.mongodb.net/pokedb', {
   useNewUrlParser: true,
@@ -16,8 +18,8 @@ connect('mongodb+srv://admin:admin@admira-pokecluster.yxysw.mongodb.net/pokedb',
 
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
-app.use(bodyParser.json({ limit: '10mb', extended: true }));
+app.use(urlencoded(bodyConfig));
+app.use(json(bodyConfig));
 
 app.use('/api/pokemons', pokemonRouter);
 
