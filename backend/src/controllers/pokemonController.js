@@ -3,7 +3,7 @@
 /* eslint-disable camelcase */
 const axios = require('axios');
 
-function pokemonController(PokemonModel) {
+function pokemonController(pokemonModel) {
   function getPokemons(req, res) {
     const searchQuery = {};
     const selectQuery = {
@@ -14,7 +14,7 @@ function pokemonController(PokemonModel) {
       sprites: true,
     };
 
-    PokemonModel.find(searchQuery, selectQuery, (findError, pokemonList) => (
+    pokemonModel.find(searchQuery, selectQuery, (findError, pokemonList) => (
       findError ? res.send(findError) : res.json(pokemonList.sort((a, b) => a.id - b.id))
     ));
   }
