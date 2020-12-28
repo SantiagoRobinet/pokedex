@@ -1,12 +1,17 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-import './App.css';
-import Header from './components/Header/Header';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/HeaderComponent/Header';
+import PokemonList from './components/PokemonListComponent/PokemonList';
 
 function App() {
   return (
     <>
       <Header />
+      <Switch>
+        <Route path="/" component={PokemonList} />
+      </Switch>
     </>
 
   );
