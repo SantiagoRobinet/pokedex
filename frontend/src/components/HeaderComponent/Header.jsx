@@ -23,11 +23,7 @@ function Header() {
             <img src="https://trello-attachments.s3.amazonaws.com/5f7f173f3f927d440950a925/5fbe91ca731763484cbf700b/c80aad5de1667527b2eff890a69c3f8f/Pok%C3%A9dex_logo.webp" alt="pokedex-logo" className="header__logo-img" />
           </Link>
         </div>
-        <div className="header__item">
-          <a href="http://admiradigitalsignage.com/" className="header__logo">
-            <img src="https://trello-attachments.s3.amazonaws.com/5f7f173f3f927d440950a925/5fbe91ca731763484cbf700b/e133bcae0e3919f6167749461a6e41b1/admira.png" alt="admira-logo" className="header__logo-img" />
-          </a>
-        </div>
+
       </div>
     </>
   );

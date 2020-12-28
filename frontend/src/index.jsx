@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
 
 const initialState = {
-  pokeReducer: {
+  pokemonReducer: {
     displayPokemonList: [],
   },
 };

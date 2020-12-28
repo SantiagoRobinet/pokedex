@@ -59,8 +59,8 @@ function pokemonController(pokemonModel) {
           moveEndpoint = move.url;
           const { data: { name, type } } = await axios.get(moveEndpoint);
           detailedMoves = [...detailedMoves, { name, type }];
-          res.json(detailedMoves);
         }
+        res.json(detailedMoves);
       } catch (movesListError) {
         res.send(movesListError);
       }
