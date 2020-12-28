@@ -4,8 +4,8 @@ const debug = require('debug')('app');
 const { connect } = require('mongoose');
 const cors = require('cors');
 
-const pokemonModel = require('./src/models/pokemonModel');
-const pokemonRouter = require('./src/routes/pokemonRouter')(pokemonModel);
+const PokemonModel = require('./src/models/PokemonModel');
+const pokemonRouter = require('./src/routes/pokemonRouter')(PokemonModel);
 
 const app = express();
 const port = process.env.PORT || 2804;

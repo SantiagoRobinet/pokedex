@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const pokemonControllerRaw = require('../controllers/pokemonController');
 
-function pokemonRouter(pokemonModel) {
+function pokemonRouter(PokemonModel) {
   const router = Router();
-  const pokemonController = pokemonControllerRaw(pokemonModel);
+  const pokemonController = pokemonControllerRaw(PokemonModel);
 
   router.route('/').get(pokemonController.getPokemons);
 
