@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/HeaderComponent/Header';
+import PokemonList from './components/PokemonListComponent/PokemonList';
+import PokemonDetail from './components/PokemonDetailComponent/PokemonDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/detail/:pokemonId" component={PokemonDetail} />
+        <Route path="/" component={PokemonList} />
+      </Switch>
+    </>
+
   );
 }
 
